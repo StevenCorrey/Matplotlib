@@ -1,0 +1,27 @@
+import pandas as pd
+import numpy as np
+import matplotlib as plt
+
+df = pd.read_excel('C:/Users/Steven/Desktop/Tourism_Statistics_Total_2013M1-2019M11.xlsx')
+df = df[['Date','total arrivals']]
+
+%matplotlib inline
+
+# Data for plotting
+t = df['Date']
+s = df['total arrivals']
+# z = np.mean(df['total arrivals'])
+
+
+fig, ax = plt.subplots()
+ax.plot(t, s, color='DarkTurquoise')
+#ax.plot(t,z)
+
+ax.set(xlabel='Year', ylabel='Arrivals Numbers',
+       title='Hong Kong Tourism Arrivals')
+
+#ax.grid()  - - - - if you want to add a grid
+plt.ylim(bottom=0)
+
+# fig.savefig("test.png") - - - - save the pic as png
+plt.show()
